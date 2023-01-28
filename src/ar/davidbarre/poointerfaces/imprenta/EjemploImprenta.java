@@ -9,13 +9,13 @@ import static ar.davidbarre.poointerfaces.imprenta.modelo.Genero.*;
 public class EjemploImprenta {
     public static void main(String[] args) {
 
-        Curriculo cv = new Curriculo("Jhon doe", "Ingeniero en sistemas", "Resumen laboral....");
-        cv.addExperiencia("Java");
-        cv.addExperiencia("Angular");
-        cv.addExperiencia("JavaScript");
-        cv.addExperiencia("C++");
+        Curriculo cv = new Curriculo(new Persona("Jhon","Doe"), "Ingeniero en sistemas", "Resumen laboral....");
+        cv.addExperiencia("Java")
+                .addExperiencia("Angular")
+                .addExperiencia("JavaScript")
+                .addExperiencia("C++");
 
-        Libro libro = new Libro("Fran barreneche", "Patrones de diseño", PROGRAMACION);
+        Libro libro = new Libro(new Persona("Fran","Barreneche"), "Patrones de diseño", PROGRAMACION);
         libro.addPagina(new Pagina("Patron Singleton"))
                 .addPagina(new Pagina("Patron Guservoy"))
                 .addPagina(new Pagina("Patron Factory"))
@@ -23,7 +23,7 @@ public class EjemploImprenta {
                 .addPagina(new Pagina("Patron Facade"));
 
 
-        Informe informe = new Informe("Martin Fowler", "james", "Estudio sobre microservisios");
+        Informe informe = new Informe(new Persona("Martin" ,"Fowler"), new Persona("James","Clles"), "Estudio sobre microservisios");
         imprimir(cv);
         System.out.println("=========");
         imprimir(informe);
